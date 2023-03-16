@@ -1,0 +1,157 @@
+/* Google Font yükleniyor: "Outfit" font family'si, 100 ve 700 ağırlığındaki stilleri sayfaya getiriliyor */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;700&display=swap");
+
+/* Bir animasyon tanımlanıyor: "spin" isimli döndürme animasyonu */
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+/* Bütün HTML elementleri için varsayılan stiller tanımlanıyor */
+* {
+  font-family: "Outfit", sans-serif; /* "Outfit" font family'si kullanılacak */
+  color: #101820ff; /* Yazı rengi: Koyu mavi */
+  margin: 0; /* Dış boşluk: 0 */
+  padding: 0; /* İç boşluk: 0 */
+  border-radius: 20px; /* Kenar yuvarlatma: 20 piksel */
+}
+
+/* Sayfa içeriği için stiller tanımlanıyor */
+body {
+  display: -webkit-box; /* Webkit tabanlı tarayıcılarda esnek kutu modeli kullanılıyor */
+  display: -ms-flexbox; /* Microsoft Edge için esnek kutu modeli kullanılıyor */
+  display: flex; /* Standart esnek kutu modeli kullanılıyor */
+  -webkit-box-orient: vertical; /* İçerik dikey olarak hizalanıyor */
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100vh; /* Sayfa boyutu: Ekrana tam sığacak şekilde ayarlanıyor */
+  -webkit-box-align: center; /* İçerik dikeyde merkezleniyor */
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center; /* İçerik yatayda merkezleniyor */
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: #101820ff; /* Sayfa arka planı: Koyu mavi */
+}
+
+/* Ana kutu için stiller tanımlanıyor */
+.main-box {
+  background: #f2aa4cff; /* Ana kutunun arka planı: Turuncu */
+  padding: 1rem 2rem; /* İçerik kenarlardan 1'er rem boşluk bırakılıyor */
+  border-radius: 20px; /* Kenar yuvarlatma: 20 piksel */
+  margin-bottom: 5rem; /* Alt kısımdan 5 rem boşluk bırakılıyor */
+}
+
+/* Ana başlık için stiller tanımlanıyor */
+.main-box .main-heading {
+  margin-right: 1rem; /* Ana başlık sağ tarafa 1 rem boşluk bırakılıyor */
+}
+/* Bu stil tanımı, "main-box" sınıfına sahip bir HTML öğesi içinde yer alan 
+   "color-name" sınıfına sahip öğelerin arkaplan rengini, 
+   padding'ini ve yazı rengini belirler. */
+.main-box .color-name {
+  background: #101820ff;
+  padding: 0.5rem 1.5rem;
+  color: white;
+}
+
+/* Bu stil tanımı, "rainbow" sınıfına sahip bir HTML öğesine uygulanacak 
+     özellikleri belirler. Bu öğenin genişliği, yüksekliği ve 
+     konumu tanımlanır. Ayrıca, öğenin içeriği ortalanır ve 
+     taşmaların gizlenmesi için bir sınırlama belirtilir. */
+.rainbow {
+  width: 11rem;
+  height: 11rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Bu stil tanımı, "rainbow" sınıfına sahip HTML öğesi için bir 
+     önceki stil tanımından farklı olarak, arka planda bir yarım daire 
+     şeklinde bir renk geçişi uygular. Bu geçişin başlangıç ve bitiş 
+     rengi belirlenirken, diğer renkler otomatik olarak hesaplanır. 
+     Ayrıca, "spin" adlı bir animasyon tanımı yapılır. */
+.rainbow::before {
+  content: "";
+  background: conic-gradient(
+    #f2aa4cff,
+    #f2aa4cff 180deg,
+    #2a2f33 180deg,
+    #0b1015 360deg
+  );
+  position: absolute;
+  width: 15rem;
+  height: 15rem;
+  -webkit-animation: spin 8s infinite linear;
+  animation: spin 8s infinite linear;
+}
+
+/* Bu stil tanımı, "_changer" sınıfına sahip bir HTML öğesine uygulanacak 
+     özellikleri belirler. Bu öğenin genişliği, yüksekliği, arkaplan rengi, 
+     konumu, kenarlık rengi, yazı rengi ve yazı boyutu tanımlanır. */
+
+._changer {
+  width: 10rem;
+  height: 10rem;
+  background: #101820ff;
+  position: absolute;
+  border: none;
+  color: white;
+  font-size: 1rem;
+}
+
+button:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */
+
+/*
+ Bu ne anlama geliyor
+
+ Bu stil dosyasının haritalama dosyasına referans verir. Haritalama dosyası, CSS stil dosyasının özgün kaynak koduna ve ilgili stil dosyasının satır numaralarına göre hataları ayıklamak için kullanılabilir. Örneğin, bir tarayıcı geliştirme aracı kullanarak stil dosyasındaki bir hatayı bulmak isterseniz, haritalama dosyası bu süreci kolaylaştırabilir.
+
+ > ne demek istiyorsun
+ 
+ `# sourceMappingURL=style.css.map` ifadesi, CSS dosyasına eşlik eden bir kaynak haritası (source map) dosyasının varlığını belirtir. Kaynak haritaları, kodun orijinal kaynak dosyalarıyla ilgili bilgileri içeren dosyalardır. Bu bilgiler, geliştiricilerin örneğin hata ayıklama yaparken daha kolay çalışmasını sağlar. Tarayıcılar bu kaynak haritalarını kullanarak CSS hatalarını orijinal kaynak dosyalarıyla ilişkilendirebilirler.
+ 
+ > ornek vererek aciklarmisin
+ 
+ Elbette, `sourceMappingURL` yorumu, CSS dosyasının kaynak kodunun nerede bulunabileceğini belirten bir işaretçidir. Bu, bir web tarayıcısı geliştirme aracı kullanarak CSS kodunu inceleyen bir geliştirici için faydalı olabilir.
+ 
+ Örneğin, `style.css` adlı bir CSS dosyası oluşturduğumuzu varsayalım. Bu dosya, web sayfamızda kullanılan stilleri içerir. Bu stil dosyası, aynı zamanda bir haritalama dosyası olan `style.css.map` dosyasını da içeriyor olabilir. Bu haritalama dosyası, orijinal CSS kaynak kodunun kodlama aracında hangi satır ve sütunlarda olduğunu belirler.
+ 
+ `sourceMappingURL` yorumu, CSS dosyasında, en sonunda belirtilir ve tarayıcıya, haritalama dosyasının nerede bulunabileceğini söyler. Örneğin:
+ 
+ css
+ 
+ ```css
+  Bu stil dosyası, sayfadaki kutulara stiller uygular. 
+ .main-box {
+   background: white;
+   border: 2px solid black;
+ }
+ 
+ Bu yorum, orijinal kaynak kodunun hangi dosyada ve satırda olduğunu belirler. 
+  # sourceMappingURL=style.css.map
+ ```
+ 
+ Bu örnekte, `sourceMappingURL` yorumu `style.css` dosyasının en sonunda belirtiliyor ve tarayıcıya `style.css.map` dosyasının mevcut konumunu gösteriyor. Bu sayede geliştiriciler, tarayıcılarının geliştirici araçları kullanarak, CSS dosyalarında değişiklik yaparken, orijinal kaynak kodlarının hangi satırlarda bulunduğunu görebilirler.
+*/
