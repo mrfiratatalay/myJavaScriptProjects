@@ -1,84 +1,48 @@
-@import url("https://fonts.googleapis.com2?family=Readex+Pro&display=swap");
+/* Google font'u yükleyelim */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&display=swap");
 
-/* İlk kısım, tüm HTML elementlerinin kenar boşluklarını ve dolgularını sıfırlar, kutu modelini sınırları dahil etmek üzere ayarlar ve kullanılacak yazı tipini belirler. */
-
+/* Temel stil ayarları */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Readex Pro", sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
-/* Sonraki kısım, sayfanın arka plan rengini (#ff5677) ayarlar. */
-
+/* Arka plan rengi değişiklikleri için geçiş süresi ayarlayalım */
 body {
-  min-height: 100vh;
-  background-color: #ff5677;
+  transition: 0.5s;
 }
 
-/* Header adlı bir bölüm oluşturur ve arka plan rengini şeffaf siyah olarak ayarlar. Yükseklik, yükseklik ve yükseklik sol, sağ, üst ve alt dolguları ayarlar. Diğer kurallarıyla birlikte, içerikleri yatay olarak hizalamak için içeriği (diğer öğeleri) hizalar ve hizalar.
- */
-
-header {
-  background-color: rgba(0, 0, 0, 0.349);
-  color: white;
-  padding: 20px 50px 20px 50px;
+/* Ana div'i ortalamak için flex kullanalım */
+.main {
+  width: 100%;
+  height: 100vh;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header #title {
-  font-size: 1.5rem;
-}
-
-/* .container adlı bir bölüm oluşturur ve diğer elemanları dikey olarak hizalar.  */
-
-.container {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  min-height: 100vh;
+  align-items: center;
 }
 
-/* #colorBox adlı bir öğe oluşturur ve siyah arka plan rengi, beyaz metin rengi, kalın metin ağırlığı, 15 piksel dolgu, 6 piksel kenar yuvarlama ve alt boşluk ayarlarını belirler. */
-
-#colorBox {
-  padding: 15px;
-  background-color: black;
-  color: white;
-  font-size: 2.5rem;
-  font-weight: bold;
-  border-radius: 6px;
-  margin-bottom: 200px;
-  margin-left: 30px;
-  margin-right: 30px;
+/* Renk kodunun gösterileceği div'i stilize edelim */
+.container {
+  width: 35rem;
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 30px;
+  text-align: center;
+  background-color: #fdd36a;
 }
 
-#colorBox span {
-  color: #00bfff;
-}
-
-/* #getNewColorBtn adlı bir düğme oluşturur ve düğmenin genişlik, yükseklik, yazı tipi boyutu, kenarlık ve arka plan rengi gibi özelliklerini ayarlar. */
-
-#getNewColorBtn {
-  height: 40px;
-  width: 120px;
-  font-size: 1rem;
+/* Buton stilini ayarlayalım */
+button {
+  margin-top: 5px;
+  width: 100%;
+  font-size: 30px;
   border: none;
-  border-radius: 0.25rem;
-  background-color: white;
-  color: black;
-  transition: all 0.5s ease;
+  border-radius: 5px;
+}
+
+/* Butona hover özelliği ekleyelim */
+#btn:hover {
   cursor: pointer;
-  word-spacing: 2.5px;
-}
-
-#getNewColorBtn:hover {
-  color: #0077ff;
-}
-
-#getNewColorBtn:active {
-  font-size: 1.3rem;
 }
