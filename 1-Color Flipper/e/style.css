@@ -1,0 +1,153 @@
+/* Google Fonts API'den Barlow ve Cutive Mono fontları yüklenir */
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400&family=Cutive+Mono&display=swap");
+
+/* Bütün öğelerin marj ve dolguları sıfırlanır */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Kök değişkenleri tanımlanır */
+:root {
+  --darkgrey: #575757;
+  --medgrey: #b6b6b6;
+  --lavender: #675ed6;
+  --lightgrey: #e6e6e6;
+}
+
+/* Sayfa geneli stil tanımları yapılır */
+body {
+  font-family: "Cutive Mono", monospace; /* font tipi belirlenir */
+  font-size: 16px; /* font boyutu belirlenir */
+  padding: 0; /* sayfa içi dolguları sıfırlanır */
+}
+
+/* Main elementi (ana içerik bölümü) stil tanımları yapılır */
+main {
+  display: flex; /* içerikleri yan yana hizalanacak şekilde düzenlenir */
+  flex-wrap: wrap; /* içeriklerin sığmaması halinde alt satıra geçmeleri sağlanır */
+  justify-content: center; /* içerikler yatayda merkezlenir */
+  align-content: center; /* içerikler dikeyde merkezlenir */
+  width: 100%; /* main elementinin genişliği 100% olacak şekilde ayarlanır */
+  height: 100vh; /* main elementinin yüksekliği sayfanın tamamını kaplayacak şekilde ayarlanır */
+  max-width: 1000px; /* main elementinin maksimum genişliği 1000px olarak belirlenir */
+  margin: 0 auto; /* main elementi sayfa ortalanır */
+}
+.container {
+  background-color: #f5f5f5; /* Arka plan rengi */
+  margin: 0 15px; /* Kenarlik ayarlari */
+  padding: 1em 2em; /* Icerik kenarliklari */
+  text-align: center; /* Icerikleri ortalama */
+  box-sizing: border-box; /* Kutu modeli */
+  display: flex; /* Icerigi yatayda konumlandirmak icin flex kullaniliyor */
+  flex-wrap: wrap; /* Elemanlar yatayda yerlestirildiginde satir sonuna gelindiginde alt satira gecmesi icin */
+  justify-content: center; /* Icerigi yatayda ortalamak icin kullaniliyor */
+  align-content: center; /* Icerigi dikeyde ortalamak icin kullaniliyor */
+  flex: 1 0 300px; /* Elemanin genislik ozellikleri flex-grow, flex-shrink ve flex-basis degerlerini belirtiyor */
+  background-blend-mode: multiply; /* Arka plan rengi ile yazilar arasindaki beyazligi azaltmak icin kullaniliyor */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Kutu goz rengi */
+}
+
+/* H1 etiketi için stil tanımlandı. */
+h1 {
+  color: var(--darkgrey); /* Yazı rengi belirlendi. */
+  margin-bottom: 1.5em; /* Etiketin alt boşluğu belirlendi. */
+  text-align: center; /* Yazı ortalanarak hizalandı. */
+  width: 100%; /* Etiket genişliği belirlendi. */
+}
+
+/* Buton etiketi için stil tanımlandı. */
+button {
+  background-color: white; /* Arkaplan rengi belirlendi. */
+  border: 2px transparent solid; /* Kenarlık olmadığı için border belirlendi. */
+  color: var(--darkgrey); /* Yazı rengi belirlendi. */
+  font-family: "Barlow", sans-serif; /* Font ailesi belirlendi. */
+  font-size: 1em; /* Yazı büyüklüğü belirlendi. */
+  letter-spacing: 1px; /* Karakterler arasındaki boşluk ayarı belirlendi. */
+  padding: 0.75em 1.25em; /* Buton boyutu belirlendi. */
+  position: relative; /* Göreceli pozisyon belirlendi. */
+  width: 100%; /* Buton genişliği belirlendi. */
+  height: 80px; /* Buton yüksekliği belirlendi. */
+  text-transform: uppercase; /* Yazı büyük harfe dönüştürüldü. */
+  appearance: none; /* Tarayıcı varsayılan buton stilleri iptal edildi. */
+  border-radius: 0; /* Kenar yuvarlatma iptal edildi. */
+  -webkit-appearance: none; /* Safari için varsayılan buton stilleri iptal edildi. */
+  -webkit-border-radius: 0; /* Safari için kenar yuvarlatma iptal edildi. */
+  transition: all 150ms ease-in; /* Buton geçiş efektleri belirlendi. */
+  box-shadow: 0 20px 10px -10px rgba(0, 0, 0, 0.4); /* Kutu gölgesi belirlendi. */
+}
+
+/* Buton üzerindeyken stil tanımlandı. */
+button:hover {
+  background-color: white; /* Arkaplan rengi belirlendi. */
+  color: var(--darkgrey); /* Yazı rengi belirlendi. */
+  cursor: pointer; /* İmleç tipi belirlendi. */
+  transform: translateY(4px); /* Buton 4 piksel yukarı taşındı. */
+  box-shadow: none; /* Kutu gölgesi iptal edildi. */
+}
+
+button::before,
+button::after {
+  /* button öğesinin önünde ve arkasında oluşturulacak öğelerin CSS kutu model özellikleri */
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-left: 2px solid transparent;
+  transition-timing-function: ease-out;
+}
+
+button::before {
+  /* button öğesi öncesinde oluşturulan öğenin konumu ve boyutu */
+  left: -2px;
+  top: -2px;
+}
+
+button::after {
+  /* button öğesi sonrasında oluşturulan öğenin konumu ve boyutu */
+  right: -2px;
+  bottom: -2px;
+}
+
+button:hover::before,
+button:hover::after {
+  /* Button'a fare üzerine gelindiğinde, önündeki ve arkasındaki öğelerin genişliği ve yüksekliği %100'e ayarlanır */
+  width: 100%;
+  height: 100%;
+}
+
+button:hover::before {
+  /* Button'a fare üzerine gelindiğinde, önündeki öğenin kenarlarına bir çerçeve çizilir */
+  border-top: 2px solid var(--darkgrey);
+  border-right: 2px solid var(--darkgrey);
+  /* Geçiş süresi ve gecikme, yükseklik değişimi tamamlandıktan sonra genişlik değişimi başlatılır */
+  transition: width 150ms, height 150ms 150ms;
+}
+
+button:hover::after {
+  /* Button'a fare üzerine gelindiğinde, arkasındaki öğenin kenarlarına bir çerçeve çizilir */
+  border-bottom: 2px solid var(--darkgrey);
+  border-left: 2px solid var(--darkgrey);
+  /* Geçiş süresi ve gecikme, yükseklik değişimi tamamlandıktan sonra genişlik değişimi başlatılır */
+  transition: width 150ms, height 150ms 150ms;
+}
+
+@media screen and (min-width: 768px) {
+  /* Ekran boyutu en az 768 piksel olduğunda uygulanacak stil özellikleri */
+  .container {
+    /* İçerik bloğuna 2em üst ve alt, 4em sağ ve sol dolgu ekleme */
+    padding: 2em 4em;
+  }
+  button {
+    /* Buton yazı tipi boyutunu büyütme */
+    font-size: 1.25em;
+    /* Buton içeriği ile buton kenarı arasındaki dolguyu ayarlama */
+    padding: 0.75em 1.25em;
+    /* Buton genişliğini %50 olarak ayarlama */
+    width: 50%;
+  }
+}
