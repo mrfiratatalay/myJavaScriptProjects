@@ -1,192 +1,52 @@
-// Sayfa yüklendiğinde yapılacak işlemler
-window.onload = function () {
-  // Renklerin listesi
-  const colors = [
-    "#000080",
-    "#00008B",
-    "#0000CD",
-    "#0000FF",
-    "#006400",
-    "#008000",
-    "#008080",
-    "#008B8B",
-    "#00BFFF",
-    "#00CED1",
-    "#00FA9A",
-    "#00FF00",
-    "#00FF7F",
-    "#00FFFF",
-    "#00FFFF",
-    "#191970",
-    "#1E90FF",
-    "#20B2AA",
-    "#228B22",
-    "#2E8B57",
-    "#2F4F4F",
-    "#2F4F4F",
-    "#32CD32",
-    "#3CB371",
-    "#40E0D0",
-    "#4169E1",
-    "#4682B4",
-    "#483D8B",
-    "#48D1CC",
-    "#4B0082",
-    "#556B2F",
-    "#5F9EA0",
-    "#6495ED",
-    "#663399",
-    "#66CDAA",
-    "#696969",
-    "#696969",
-    "#6A5ACD",
-    "#6B8E23",
-    "#708090",
-    "#708090",
-    "#778899",
-    "#778899",
-    "#7B68EE",
-    "#7CFC00",
-    "#7FFF00",
-    "#7FFFD4",
-    "#800000",
-    "#800080",
-    "#808000",
-    "#808080",
-    "#808080",
-    "#87CEEB",
-    "#87CEFA",
-    "#8A2BE2",
-    "#8B0000",
-    "#8B008B",
-    "#8B4513",
-    "#8FBC8F",
-    "#90EE90",
-    "#9370DB",
-    "#9400D3",
-    "#98FB98",
-    "#9932CC",
-    "#9ACD32",
-    "#A0522D",
-    "#A52A2A",
-    "#A9A9A9",
-    "#A9A9A9",
-    "#ADD8E6",
-    "#ADFF2F",
-    "#AFEEEE",
-    "#B0C4DE",
-    "#B0E0E6",
-    "#B22222",
-    "#B8860B",
-    "#BA55D3",
-    "#BC8F8F",
-    "#BDB76B",
-    "#C0C0C0",
-    "#C71585",
-    "#CD5C5C",
-    "#CD853F",
-    "#D2691E",
-    "#D2B48C",
-    "#D3D3D3",
-    "#D3D3D3",
-    "#D8BFD8",
-    "#DA70D6",
-    "#DAA520",
-    "#DB7093",
-    "#DC143C",
-    "#DCDCDC",
-    "#DDA0DD",
-    "#DEB887",
-    "#E0FFFF",
-    "#E6E6FA",
-    "#E9967A",
-    "#EE82EE",
-    "#EEE8AA",
-    "#F08080",
-    "#F0E68C",
-    "#F0F8FF",
-    "#F0FFF0",
-    "#F0FFFF",
-    "#F4A460",
-    "#F5DEB3",
-    "#F5F5DC",
-    "#F5F5F5",
-    "#F5FFFA",
-    "#F8F8FF",
-    "#FA8072",
-    "#FAEBD7",
-    "#FAF0E6",
-    "#FAFAD2",
-    "#FDF5E6",
-    "#FF0000",
-    "#FF00FF",
-    "#FF00FF",
-    "#FF1493",
-    "#FF4500",
-    "#FF6347",
-    "#FF69B4",
-    "#FF7F50",
-    "#FF8C00",
-    "#FFA07A",
-    "#FFA500",
-    "#FFB6C1",
-    "#FFC0CB",
-    "#FFD700",
-    "#FFDAB9",
-    "#FFDEAD",
-    "#FFE4B5",
-    "#FFE4C4",
-    "#FFE4E1",
-    "#FFEBCD",
-    "#FFEFD5",
-    "#FFF0F5",
-    "#FFF5EE",
-    "#FFF8DC",
-    "#FFFACD",
-    "#FFFAF0",
-    "#FFFAFA",
-    "#FFFF00",
-    "#FFFFE0",
-    "#FFFFF0",
-    "#FFFFFF",
-  ];
+// Bir dizi oluşturuluyor ve "colorList" değişkenine atanıyor
+const colorList = [
+  "violet",
+  "blue",
+  "green",
+  "yellow",
+  "orange",
+  "red",
+  "cyan",
+  "pink",
+];
 
-  // Butonu seç
-  const btn = document.getElementById("btn");
-  // Renk div elementini seç
-  const color = document.querySelector(".color");
+// Bir buton öğesi seçiliyor ve "btn" değişkenine atanıyor
+const btn = document.getElementById("btn");
 
-  // Butona bir tıklama olayı ekle
-  btn.addEventListener("click", () => {
-    // Rastgele bir sayı seç ve renkler dizisindeki o sayıdaki rengi seç
-    const randomNumber = getRandomNumber();
-    // Sayfa arkaplan rengini rastgele seçilen renk koduna ayarla
-    document.body.style.backgroundColor = colors[randomNumber];
-    // Renk adını gösteren div'in içeriğini seçilen renk adıyla güncelle
-    color.textContent = colors[randomNumber];
-  });
+// Bir HTML öğesi seçiliyor ve "color" değişkenine atanıyor
+const color = document.querySelector(".color");
 
-  // Rastgele sayı üreten fonksiyon
-  function getRandomNumber() {
-    return Math.floor(Math.random() * colors.length);
-  }
-};
+// Butonun tıklanma olayı dinleyicisi ekleniyor
+btn.addEventListener("click", function () {
+  // "getRandomNumber" fonksiyonundan rasgele bir sayı elde ediliyor
+  let x = getRandomNumber();
 
-///IMPORTANT!!!!
-/*
-window.onload genellikle web sayfası içindeki tüm kaynaklar (HTML, CSS, JavaScript dosyaları, görseller vb.) tamamen yüklendikten sonra çalıştırılacak JavaScript kodlarını belirlemek için kullanılır. Örneğin, web sayfanızda JavaScript kullanarak bir HTML öğesinin içeriğini değiştirmek istediğinizde, ilgili HTML öğesi yüklendiğinde bu değişikliği yapmanız gerekmektedir. Bu nedenle, window.onload kullanarak JavaScript kodlarınızın ilgili HTML öğeleri tamamen yüklendiğinde çalıştırılmasını sağlayabilirsiniz. Bunun yanı sıra, window.onload aynı zamanda sayfa yüklendiğinde belirli işlemler yapmak için de kullanılabilir. Örneğin, sayfa yüklendiğinde bir karşılama mesajı göstermek veya bir animasyonu başlatmak gibi işlemler bu yöntemle gerçekleştirilebilir.
+  // "color" değişkeninin metin içeriği, "colorList" dizisinden elde edilen renk ile güncelleniyor
+  color.textContent = colorList[x];
 
-Tamamen doğru! window.onload, web sayfalarında JavaScript kodlarının belirli bir HTML öğesi veya sayfanın tamamen yüklenmesini beklemesini sağlayarak işlemler yapılmasına olanak tanır. Bu nedenle, sayfanın tamamen yüklenmesini bekleyen ve daha sonra işlemler yapacak JavaScript kodlarını içeren fonksiyonlar genellikle window.onload içinde tanımlanır.
+  // Belge gövdesinin arka plan rengi, "colorList" dizisinden elde edilen renk ile güncelleniyor
+  document.body.style.backgroundColor = colorList[x];
+});
 
-Örneğin, aşağıdaki kod örneği, sayfa yüklendiğinde bir karşılama mesajı göstermek için window.onload kullanır:
+// Rasgele sayı üretmek için bir fonksiyon tanımlanıyor
+function getRandomNumber() {
+  return Math.floor(Math.random() * colorList.length);
+}
 
-javascript
+// Bir buton öğesi seçiliyor ve "button1" değişkenine atanıyor
+const button1 = document.getElementById("butt")[0];
 
-```javascript
-window.onload = function() {
-  alert("Hoş geldiniz!");
-};
-```
+// Bir HTML öğesi seçiliyor ve "navLinks" değişkenine atanıyor
+const navLinks = document.getElementsByClassName("nav-links")[0];
 
-Bu kod, sayfa tamamen yüklendiğinde çalışacak ve bir alert kutusu aracılığıyla "Hoş geldiniz!" mesajını gösterecektir.
-*/
+// Butonun tıklanma olayı dinleyicisi ekleniyor
+function myFun() {
+  // "navLinks" HTML öğesine "active" sınıfı ekleniyor veya kaldırılıyor
+  navLinks.classList.toggle("active");
+
+  // Belge gövdesine "active" sınıfı ekleniyor veya kaldırılıyor
+  document.body.classList.toggle("active");
+
+  // "Executed" metni konsola yazdırılıyor
+  console.log("Executed");
+}

@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+body.active {
+  overflow: hidden;
+}
+
+.nav-center {
+  display: flex;
+  background: rgb(255, 254, 254);
+  box-shadow: 0px 3px 5px rgb(150, 147, 147);
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin: 0 1rem;
+  padding: 0.8rem 0;
+  background-color: #000000;
+  background-image: linear-gradient(45deg, #ff7809, rgb(222, 0, 252), #16ffec);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+.nav-links {
+  display: flex;
+  width: fit-content;
+  margin: 0 0 0 auto;
+}
+
+.nav-links li {
+  margin: 0 2rem 0 0;
+  font-size: 1.5rem;
+  padding: 0.8rem 0;
+}
+
+.nav-links li a {
+  color: rgb(209, 209, 209);
+  transition: 0.5s;
+}
+
+#activ {
+  color: black;
+}
+
+.nav-links li a:hover {
+  color: black;
+}
+
+.button {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: none;
+  color: black;
+}
+
+.container {
+  width: fit-content;
+  margin: 10rem auto;
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+  padding: 0.7rem;
+  margin: 3rem auto;
+  border: 3px solid black;
+  border-radius: 0.5rem;
+  width: fit-content;
+  text-align: center;
+}
+
+h2 {
+  width: fit-content;
+  font-size: 2rem;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.btn {
+  display: block;
+  margin: 1rem auto;
+  font-size: 1.5rem;
+  padding: 0.3rem 0.8rem;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 0.5rem;
+  background: transparent;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: rgb(0, 0, 0);
+  color: white;
+}
+
+@media screen and (max-width: 400px) {
+  h1 {
+    padding: 0.5rem;
+    margin: 2.5rem auto;
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .btn {
+    margin: 1rem auto;
+    font-size: 1.2rem;
+  }
+
+  .button {
+    display: block;
+  }
+
+  .nav-center {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  h4 {
+    margin: 0.5rem auto;
+    padding: 0;
+    width: fit-content;
+  }
+
+  .nav-links li {
+    margin: 0;
+    padding: 0.5rem;
+  }
+}

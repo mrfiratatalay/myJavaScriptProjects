@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color-Flipper</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="index.js"></script>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-center">
+        <h4>Color flipper</h4>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="simple.html" id="activ">Simple</a></li>
+        </ul>
+        <a href="#" class="button" id="butt" onclick="myFun()"
+          ><i class="fa fa-bars"></i
+        ></a>
+      </div>
+    </nav>
+
+    <main>
+      <div class="container">
+        <h1>Simp Color flipper</h1>
+        <h2>Background Color : <span class="color">White</span></h2>
+        <button class="btn btn-hero" id="btn">Click me</button>
+      </div>
+    </main>
+  </body>
+</html>
+
+<!-- onclick METHODU 
+
+
+"onclick", bir HTML özelliğidir ve bir kullanıcının bir HTML elementine tıkladığında tetiklenen bir olaydır. Bu özellik, bir fonksiyonun adını içerir ve kullanıcının tıklaması durumunda bu fonksiyon çalıştırılır.
+
+Örneğin, yukarıdaki HTML kodunda, "onclick" özelliği, "myFun()" fonksiyonunu çağırıyor. Kullanıcı "butt" id'li elemente tıkladığında, "myFun()" fonksiyonu çalıştırılır ve menü açılıp kapanır.
+
+MISAL;
+<button onclick="alert('Merhaba Dünya!')">Tıkla</button>
+
+Bu örnekte, "button" elementi "Tıkla" metnini içerir ve "onclick" özelliği, butona tıklandığında çalışacak JavaScript kodunu belirtir. Bu örnekte "onclick" özelliği, "alert" fonksiyonunu çağırıyor ve "Merhaba Dünya!" mesajını görüntülüyor. Kullanıcı butona tıkladığında, "alert" fonksiyonu çalışır ve bir pencere açarak mesajı görüntüler.
+
+
+-------------AYRICA--------------
+Bu kod bloğu, sayfada menü düğmesi oluşturmak için Font Awesome adlı bir ikon kütüphanesi kullanıyor. Bu ikon kütüphanesi, web sitelerinde kullanılabilecek farklı simgeler ve ikonlar sağlar.
+
+<i> etiketi, içinde bulunduğu sayfada bir ikon veya sembol göstermek için kullanılır. class özelliği, bu etikete atanmış olan fa fa-bars sınıfını belirtir. Bu sınıf, Font Awesome kütüphanesinde bulunan menü simgesini gösterir. Bu nedenle, <i> etiketi içinde bulunan fa fa-bars sınıfı, menü simgesini sayfada görüntülemek için kullanılır.
+
+Özetle, <i> etiketi, sayfada bir ikon veya sembol göstermek için kullanılır. class özelliği, kullanılacak ikonun veya sembolün belirlenmesinde kullanılır. Font Awesome kütüphanesi gibi harici bir kütüphane kullanıldığında, belirlenmiş sınıf isimleri kütüphanedeki simgeleri yüklemek için kullanılır.
+-->
