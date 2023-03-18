@@ -1,0 +1,88 @@
+/* 1. Sayfa arka plan rengi sarı (yellow) olacak */
+body {
+  background-color: yellow;
+
+  /* 2. Metin rengi lacivert (navy) olacak */
+  color: navy;
+
+  /* 3. Yazı tipi sans-serif olacak */
+  font-family: sans-serif;
+
+  /* 4. Sayfa yüksekliği (height) ekran yüksekliği (viewport height) kadar olacak */
+  height: 100vh;
+
+  /* 5. İçerik (main) dikey ve yatay ortalanacak */
+  display: flex;
+}
+
+/* 6. İçerik (main) öğesi, arkaplanı beyazdım (whitesmoke) 500 piksel genişliğinde olacak */
+.main {
+  background: whitesmoke;
+  width: 500px;
+
+  /* 7. Yüksekliği 200 piksel olacak */
+  height: 200px;
+
+  /* 8. Kenar boşluğu 30 piksel olacak */
+  padding: 30px;
+
+  /* 9. Dikey ve yatay ortalanacak */
+  margin: auto;
+
+  /* 10. Metin ortalanacak */
+  text-align: center;
+
+  /* 11. Köşeleri yuvarlatılacak */
+  border-radius: 5px;
+
+  /* 12. Kutunun gölgesi belirlenecek */
+  box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* 13. Başlık (heading) yazı tipi büyük monospace olacak */
+.heading {
+  font-size: 35px;
+  font-family: monospace;
+}
+
+/* 14. Paragraf (p) yazı tipi büyük harf yapılacak */
+p {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+/* 15. Buton (btn) özellikleri belirlenecek */
+.btn {
+  border: none;
+  padding: 10px;
+
+  /* 16. Yazı tipi büyüklüğü belirlenecek */
+  font-size: 16px;
+
+  /* 17. Yazı tipi büyük harf yapılacak */
+  text-transform: uppercase;
+
+  /* 18. Arkaplan rengi kırmızı olacak */
+  background: red;
+
+  /* 19. Yazı rengi beyaz olacak */
+  color: white;
+
+  /* 20. Yazı kalınlığı belirlenecek */
+  font-weight: 600;
+
+  /* 21. Harf aralığı (letter spacing) belirlenecek */
+  letter-spacing: 3px;
+
+  /* 22. Köşeleri yuvarlatılacak */
+  border-radius: 3px;
+
+  /* 23. Butonun kenarlığı olmayacak */
+  outline: none;
+}
+
+/* 24. Buton üzerine gelindiğinde (hover), fare imlecini işaretçiye dön*/
+
+.btn:hover {
+  cursor: pointer;
+}
