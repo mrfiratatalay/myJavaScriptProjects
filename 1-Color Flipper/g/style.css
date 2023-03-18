@@ -1,0 +1,149 @@
+/* Header */
+/* Burada header adlı bir eleman tanımlanıyor. */
+header {
+  /* Elemanın genişliği tüm viewport genişliği kadar ayarlanıyor. */
+  width: 100vw;
+  /* Elemanın en küçük yüksekliği 15 viewport yüksekliği kadar ayarlanıyor. */
+  min-height: 15vh;
+  /* Arka plan rengi whitesmoke olarak ayarlanıyor. */
+  background-color: whitesmoke;
+  /* Eleman grid şeklinde gösteriliyor. */
+  display: grid;
+  /* Grid'in sütunları 1 fr, yani eşit genişliğe sahip iki bölümden oluşuyor. */
+  grid-template-columns: 1fr 1fr;
+  /* Grid'in satırları 1 fr, yani eşit yüksekliğe sahip bir bölümden oluşuyor. */
+  grid-template-rows: 1fr;
+  /* Elemanın içeriği kenarlardan 1rem kadar içeride bırakılacak şekilde ayarlanıyor. */
+  padding: 1rem;
+  /* Elemana hafif bir kutu gölgesi ekleniyor. */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Header içindeki h1 etiketi */
+header h1 {
+  /* Kendisini alt satıra doğru konumlandırır. */
+  place-self: end;
+  /* Dikey yönde merkezlenir. */
+  align-self: center;
+  /* Metin sağa yaslanarak hizalanır. */
+  text-align: right;
+  /* Yazı tipi Raleway, sans-serif olarak ayarlanır. */
+  font-family: Raleway, sans-serif;
+  /* Yazıya hafif bir gölge eklenir. */
+  text-shadow: 0.1rem 0.1rem 0 gray;
+}
+
+/* Header içindeki .logo sınıfı */
+header .logo {
+  /* Kendisini sol üst köşeye konumlandırır. */
+  place-self: start;
+  /* Dikey yönde merkezlenir. */
+  align-self: center;
+  /* Yazı rengi salmon olarak ayarlanır. */
+  color: salmon;
+  /* Yazı kalınlığı bold (700) olarak ayarlanır. */
+  font-weight: 700;
+  /* Yazı tipi Raleway, sans-serif olarak ayarlanır. */
+  font-family: Raleway, sans-serif;
+  /* Yazı boyutu 2rem olarak ayarlanır. */
+  font-size: 2rem;
+  /* Yazıya dört farklı renkte hafif bir gölge eklenir. */
+  text-shadow: 0.05rem 0.05rem 0 yellow, 0.1rem 0.1rem 0 blue,
+    0.15rem 0.15rem 0 red, 0.2rem 0.2rem 0 black;
+}
+
+/* Main */
+main {
+  /* main bölümü tüm ekranı kaplayacak */
+  width: 100vw;
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+}
+
+/* container adlı bir sınıf oluşturuluyor */
+.container {
+  /* metin hizalaması merkeze alınıyor */
+  text-align: center;
+  /* arkaplan rengi belirleniyor */
+  background-color: lavender;
+  /* maksimum genişlik belirleniyor */
+  max-width: 500px;
+  /* yazı fontu belirleniyor */
+  font-family: Raleway, sans-serif;
+  /* padding belirleniyor */
+  padding: 2rem 3rem;
+  /* kutuya gölge veriliyor */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* container sınıfının içindeki h2 etiketi seçiliyor */
+.container h2 {
+  /* padding belirleniyor */
+  padding: 1rem;
+}
+
+/* container sınıfının içindeki buton seçiliyor */
+.container button {
+  /* buton yazı fontu boyutu belirleniyor */
+  font-size: 1.2rem;
+  /* buton yazı fontu ağırlığı belirleniyor */
+  font-weight: 600;
+  /* mouse imlecine el belirleniyor */
+  cursor: pointer;
+  /* buton padding belirleniyor */
+  padding: 0.75rem 1.25rem;
+  /* buton köşe yarıçapı belirleniyor */
+  border-radius: 0.4rem;
+  /* buton üzerindeki geçiş efekti belirleniyor */
+  transition: all ease-in-out 400ms;
+}
+
+/* container sınıfının içindeki buton üzerine gelindiğindeki durumu seçiliyor */
+.container button:hover {
+  /* butona gölge veriliyor */
+  box-shadow: 5px 5px;
+  /* buton kaydırma etkisi belirleniyor */
+  transform: translate(-5px, -5px);
+}
+
+/* Loader */
+.progress-3 {
+  /* Yüklenme çubuğu genişliği, yüksekliği ve kenar yuvarlaklığı */
+  width: 120px;
+  height: 20px;
+  border-radius: 20px;
+  /* Yüklenme çubuğu arka planı: iki tekrarlanan lineer gradyanın birleşimi */
+  background: repeating-linear-gradient(135deg, #f03355 0 10px, #ffa516 0 20px)
+      0/0% no-repeat,
+    repeating-linear-gradient(135deg, #ddd 0 10px, #eee 0 20px) 0/100%;
+  /* Yüklenme çubuğuna animasyon ekleme */
+  animation: p3 2s infinite;
+}
+
+/* Yüklenme çubuğu animasyonu: arka plandaki gradyanın boyutunu arttır */
+@keyframes p3 {
+  100% {
+    background-size: 100%;
+  }
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  z-index: 999;
+  transition: all linear 2.5s;
+}
+
+.hide-preloader {
+  z-index: -999;
+  visibility: hidden;
+}
