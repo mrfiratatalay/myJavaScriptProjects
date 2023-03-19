@@ -100,7 +100,7 @@ button {
 button:hover {
   background: #222;
   color: white;
-  pointer: cursor;
+  cursor: pointer;
 }
 
 button:active {

@@ -15,24 +15,112 @@
     <script src="index.js"></script>
   </head>
 
+  <!-- HTML sayfamızın başlangıcı -->
+
   <body>
+    <!-- Header alanımız -->
     <header>
+      <!-- Form alanımız -->
       <form onsubmit="return false">
+        <!-- Switch container div'imiz -->
         <div class="switch-container">
+          <!-- Checkbox inputumuz -->
+          <!-- Burda bilerek bunu baslangic degeri olarak "checked" yaptim yani sayfam yuklenir yuklenmez baslangic degeri olarak zaten isaretlenmis olucak bunu manuel olarak kapattigimda false olucak ve ona gore belirtdigim fonks biri calisacak -->
           <input type="checkbox" id="switch" checked />
+          <!-- Label elementimiz -->
           <label for="switch">
+            <!-- RGB labelimiz -->
             <p class="rgb-label">RGB</p>
+            <!-- Hex labelimiz -->
             <p class="hex-label">Hex</p>
+            <!-- Kare elementimiz -->
             <span class="square"></span>
           </label>
         </div>
       </form>
     </header>
 
+    <!-- Ana konteynerimiz -->
     <div class="main-container">
+      <!-- Başlık -->
       <h1>Background Color:</h1>
+      <!-- Renk textimiz -->
       <h2><span class="color-text">RGB(255, 255, 255)</span></h2>
     </div>
-    <button class="main-button" onClick="filterDisplay()">Click me!</button>
+
+    <!-- Butonumuz -->
+    <button class="main-button" onClick="filterDisplay()" >Click me!</button>
   </body>
+  <!-- HTML sayfamızın sonu -->
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ************************** HTML onClick OZELLIGININ KULLANIM MANTIGI  **************************
+
+<!--! HTML'de, "onClick" özelliği bir butona tıklandığında çağrılacak JavaScript kodunu tanımlar. Yani, bir kullanıcı butona tıkladığında, belirtilen JavaScript kodu çalıştırılır. "onClick" özelliği, bir butonun HTML etiketi içinde kullanılarak tanımlanabilir. Örneğin:<button onClick="myFunction()">Click me!</button>    Bu kodda, "onClick" özelliği, "myFunction()" olarak adlandırılan bir JavaScript fonksiyonuna işaret eder. Bu fonksiyon, butona tıklandığında çalıştırılır. JavaScript fonksiyonu, "onClick" özelliği tarafından belirtilen bir fonksiyonun adı veya tam bir fonksiyon tanımı olabilir. Örneğin: <button onClick="alert('Hello, world!')">Click me!</button>   Bu kodda, "onClick" özelliği, "alert('Hello, world!')" olarak tanımlanmış bir JavaScript ifadesine işaret eder. Bu ifade, butona tıklandığında bir uyarı kutusu açar ve "Hello, world!" metnini görüntüler. "onClick" özelliği, aynı zamanda bir JavaScript olay dinleyicisi (event listener) kullanarak da tanımlanabilir. Bu yöntem, daha karmaşık JavaScript kodlarının kullanılmasına olanak tanır. Örneğin: -->
+
+<!-- <button id="myButton">Click me!</button>
+
+<script>
+  // Button elemanını seçme
+  var button = document.getElementById("myButton");
+
+  // onClick olay dinleyicisi ekleyerek butona tıklama olayını takip etme
+  button.addEventListener("click", function() {
+    // Kodlar burada yer alır
+    alert("Hello, world!");
+  });
+</script> -->
+
+<!--?Bu kodda, öncelikle "myButton" id'sine sahip bir buton seçilir. Daha sonra, "addEventListener" yöntemi kullanılarak, "click" olayına bir olay dinleyicisi eklenir. Bu olay dinleyicisi, butona tıklandığında çalışacak olan bir anonim JavaScript fonksiyonu içerir. Bu fonksiyon, "alert" yöntemi kullanarak bir uyarı kutusu açar ve "Hello, world!" mesajını görüntüler.HTML'de, hem "onClick" özelliği hem de "addEventListener" yöntemi kullanılarak bir olay dinleyicisi tanımlanabilir. Ancak, modern web geliştirme pratiğinde, genellikle "addEventListener" yöntemi tercih edilir. Bunun nedeni, "addEventListener" yönteminin daha esnek ve güvenilir olmasıdır. Örneğin, "addEventListener" yöntemi ile birden fazla olay dinleyicisi eklenebilir ve bunlar ayrı ayrı kaldırılabilir. Ayrıca, "addEventListener" yöntemi, HTML etiketinde yazılan kodla JavaScript kodunu daha iyi ayırmanıza yardımcı olur. Öte yandan, "onClick" özelliği kullanarak olay dinleyicisi tanımlamak daha basittir ve kısa kodlar yazmanıza olanak tanır. Ancak, büyük uygulamalarda veya ölçeklenebilir projelerde, bu yaklaşım sürdürülebilir değildir.Sonuç olarak, temel işlevselliği için küçük projelerde "onClick" özelliği kullanılabilir. Ancak, daha büyük ve ölçeklenebilir projeler için, "addEventListener" yöntemi tercih edilir. -->
+
+
+
+
+
+
+
+
+<!--******************  HTML FORM ELEMANININ KULLANIM MANTIGI  *********************
+<!-- 
+<!--! HTML form elemanları, kullanıcının belirli bir işlemi gerçekleştirmesine izin verir ve genellikle bir sunucuya gönderilen verileri işlemek için kullanılır. Form gönderildiğinde, genellikle sayfa yeniden yüklenir ve kullanıcının gönderdiği veriler sunucu tarafında işlenir. Form elemanları, bir "onsubmit" özelliği içerebilirler. Bu özellik, kullanıcının formu göndermeden önce belirli bir işlem yapmasını sağlar. "onsubmit" özelliği genellikle JavaScript fonksiyonlarına işaret eder. Bu fonksiyonlar, formun gönderilmeden önce verileri doğrulamak, işlemek veya değiştirmek için kullanılabilir. -->
+
+<!-- ?Örneğin, aşağıdaki HTML kodu, bir formu işlemek için "myFunction()" adlı bir JavaScript fonksiyonuna işaret eder: -->
+
+<!-- 
+  <form onsubmit="myFunction()"> -->
+  <!-- form elemanları burada yer alır -->
+  <!-- <input type="submit" value="Submit">
+  </form>  -->
+
+
+<!--? Bu kodda, kullanıcı formu göndermeden önce "myFunction()" adlı bir JavaScript fonksiyonu tetiklenir. Bu fonksiyon, form verilerini doğrulayabilir, işleyebilir veya değiştirebilir. Eğer fonksiyon, işlemi tamamlamak için uygun verilere sahip olduğunu belirlerse, form gönderilir ve sayfa yeniden yüklenir. Aksi takdirde, fonksiyonun geri dönüş değeri "false" olarak ayarlanabilir ve form gönderilmez. "onsubmit:false" ifadesi, bir HTML form elemanının "onsubmit" özelliğine atanmış bir değerdir. Bu değer, formun gönderilmesini engeller ve formun varsayılan işlevselliğini iptal eder. Normalde bir form gönderildiğinde, form verileri sunucuya gönderilir ve sunucu tarafında işlenir. Ancak "onsubmit:false" özelliği kullanıldığında, formun gönderilmesi engellenir ve form verileri sunucuya gönderilmez. Bu özellik, genellikle bir formun doğrulama işlemlerini gerçekleştirdikten sonra, verilerin sunucuya gönderilmeden önce kullanıcının onayını beklemek için kullanılır. Kullanıcının onayını almak için, JavaScript kullanılarak bir onay kutusu (confirm box) veya açılır pencere (modal) gibi bir araç oluşturulabilir. -->
+
+<!--*Örneğin, aşağıdaki kodda, bir formun gönderilmesi engellenir ve kullanıcının onay vermesi beklenir: -->
+<!-- <form onsubmit="return confirm('Are you sure you want to submit the form?')">
+        form elemanları burada yer alır -->
+  <!--  <input type="submit" value="Submit">
+      </form> -->
+
+<!--? Bu kodda, "onsubmit" özelliği "return confirm('Are you sure you want to submit the form?')" olarak ayarlanır. Bu ifade, bir onay kutusu oluşturur ve kullanıcının "OK" düğmesine tıklaması halinde, form gönderilir. "Cancel" düğmesine tıklanması halinde ise, form gönderilmez. Eğer bir HTML form elemanının "onsubmit" özelliği doğrudan "false" olarak ayarlanırsa, bu, formun hiçbir zaman gönderilemeyeceği anlamına gelir. Yani formu göndermek isteyen bir kullanıcı, herhangi bir işlem gerçekleştiremeyecektir. Bununla birlikte, bu durumda da "onsubmit" özelliğine atanmış bir JavaScript fonksiyonu kullanılabilir. Bu fonksiyon, formun gönderilmesini engellemek yerine, form verilerini kontrol edebilir ve kullanıcının doğru veri girdiğinden emin olmasını sağlayabilir. Bu şekilde, kullanıcı hatalı verileri düzeltmeden önce formu göndermeye çalışabilir, ancak göndermeden önce verileri doğrulama işlemi gerçekleştirilecektir. -->
+
+<!--Örneğin, aşağıdaki kodda, formun gönderilmesi engellenir ve bir uyarı mesajı gösterilir:
+<!--   <form onsubmit="alert('Please enter valid data.'); return false;">
+  <!--      form elemanları burada yer alır -->
+  <!--      <input type="submit" value="Submit">
+      </form>
+
+<!-- Bu kodda, "onsubmit" özelliği doğrudan "false" olarak ayarlanır ve aynı zamanda bir JavaScript "alert" fonksiyonuna işaret eder. Bu şekilde, formu göndermeden önce, kullanıcıya bir uyarı mesajı gösterilir ve form verileri doğru girilene kadar gönderme işlemi engellenir.
