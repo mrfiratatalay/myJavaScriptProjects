@@ -1,0 +1,60 @@
+/* Bu CSS kodu sayfa içindeki tüm öğelerin kenar boşluklarını ve dolgularını sıfırlar */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Bu CSS kodu, sayfanın tamamını kaplayacak şekilde HTML ve body öğelerinin yükseklik ve genişlik değerlerini %100 olarak ayarlar ve Raleway fontunu kullanır */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Raleway", sans-serif;
+}
+
+/* Bu CSS kodu, başlık öğesinin görünümünü belirler */
+.encabezado {
+  background: #222222; /* Arkaplan rengi siyah */
+  color: white; /* Yazı rengi beyaz */
+  border-radius: 1em; /* Kenar yarıçapı 1em */
+  padding: 1em; /* Kenar boşluğu 1em */
+  position: absolute; /* Mutlak konumlandırma */
+  top: 50%; /* Yükseklikte %50 konumlandırma */
+  left: 50%; /* Genişlikte %50 konumlandırma */
+  margin-right: -50%; /* Sağ kenar boşluğunu %50 azaltarak ortalamaya yardımcı olur */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Dikey ve yatayda -%50 konumlandırarak ortalar */
+  box-shadow: 0px 2px 3px #444444; /* Kutunun alt kısmına hafif bir gölge ekler */
+}
+
+/* Bu CSS kodu, kartın başlık alanının görünümünü belirler */
+.tarjeta-header {
+  font-size: 1.2em; /* Yazı boyutu 1.2em */
+  padding: 5px 0; /* Kenar boşluğu 5px üst ve altta, 0 sol ve sağda */
+}
+
+/* Bu CSS kodu, ana başlık ve butonunun görünümünü belirler */
+.main-title-btn {
+  text-align: center; /* Metni merkezler */
+}
+
+/* Bu CSS kodu, buton öğesinin görünümünü belirler */
+button {
+  border: none; /* Kenar çizgisi yok */
+  padding: 10px 40px; /* Kenar boşluğu 10px üst ve altta, 40px sol ve sağda */
+  border-radius: 6px; /* Kenar yarıçapı 6px */
+  cursor: pointer; /* İşaretçiyi işaretleyici olarak değiştirir */
+  font-size: 1em; /* Yazı boyutu 1em */
+  background-color: #cccccc; /* Arka plan rengi gri */
+}
+
+/* Bu CSS kodu, yorum satırıdır ve sayfanın tamamında merkezleme yapar */
+/*
+position: absolute;
+left: 0;
+top: 50%;
+width: 100%;
+text-align: center;
+*/
