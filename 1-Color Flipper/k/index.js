@@ -1,3 +1,18 @@
+/*
+JavaScript'de join() methodu, bir dizi elemanını birleştirmek için kullanılan bir dizi metodu olarak kullanılır. Bu metot, bir dizi elemanını birleştirerek bir dize oluşturur.
+
+join() metodu, bir diziyi birleştirmek için bir ayraç belirlemeyi sağlar. Bu ayraç, dizi elemanları arasında kullanılacak bir dizedir. Eğer ayraç belirtilmezse varsayılan olarak virgül (",") kullanılır.
+
+Örnek kullanımı:
+let arr = ["bir", "iki", "üç"];
+let joinedArr = arr.join("-"); // Birleştirme işlemi yapılır
+console.log(joinedArr); // "bir-iki-üç" yazdırılır
+
+Yukarıdaki örnekte, join() metodu kullanılarak "bir-iki-üç" dizesi oluşturulur. Elemanlar arasındaki ayraç olarak, "-" karakteri belirtilmiştir. Bu şekilde, dizinin elemanları arasında "-" karakteri kullanılarak birleştirilir ve bir dize oluşturulur.
+
+Dikkat edilmesi gereken bir diğer nokta da, join() metodunun, orijinal diziyi değiştirmediğidir. Yani, bu metodun kullanılması sonucunda oluşan yeni birleştirilmiş dizi, orijinal diziyi değiştirmez.
+*/
+
 // RGB renk kodu oluşturan fonksiyon
 const displayRGBColor = () => {
   // Rastgele bir RGB renk kodu oluşturulur
