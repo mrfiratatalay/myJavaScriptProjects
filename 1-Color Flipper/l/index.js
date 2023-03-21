@@ -105,3 +105,34 @@ const paragraphs = document.querySelectorAll('p');
 
 Bu örnek, belgedeki tüm sınıfı "example" olan öğeleri seçer ve bu öğelerin sınıf adını "new-class" olarak değiştirir. elements adlı NodeList nesnesi, seçici ".example" ile eşleşen öğeleri içerir.
 */
+
+//***********************************************************************************************/
+//************* event.target() ve event.currentTarget() **********/
+//***********************************************************************************************/
+/*
+!Öncelikle bir HTML sayfası üzerindeki bir butona tıkladığımızda gerçekleşen olayı ele alalım. Bu butona tıkladığımızda JavaScript tarafında bir olay tetiklenir ve bu olayın dinleyicisi olan bir işlev çalıştırılır. Bu işlev, olaya ilişkin ayrıntıları içeren bir `event` nesnesi alır. Bu `event` nesnesi, birkaç özellik içerir. Bunlar arasında `target` ve `currentTarget` özellikleri de yer alır. `target` özelliği, olayın hedefi olan öğeyi, yani olayın gerçekleştiği butonu temsil ederken, `currentTarget` özelliği, olayın işlendiği öğeyi, yani olay dinleyicisinin bağlandığı elementi temsil eder.
+
+<div id="outer">
+  <button id="inner">Click me</button>
+</div>
+
+
+!Bu `button` elementine tıklandığında bir olay dinleyicisi tetiklenecek ve `event` nesnesi oluşturulacaktır. Olay dinleyicisi, `event` nesnesinin `target` ve `currentTarget` özelliklerine erişebilir.
+
+
+const outer = document.querySelector('#outer');
+const inner = document.querySelector('#inner');
+
+outer.addEventListener('click', function(event) {
+  console.log('target:', event.target); // <button id="inner">
+  console.log('currentTarget:', event.currentTarget); // <div id="outer">
+});
+
+inner.addEventListener('click', function(event) {
+  console.log('target:', event.target); // <button id="inner">
+  console.log('currentTarget:', event.currentTarget); // <button id="inner">
+});
+
+
+*Bu örnekte, `outer` adlı `div` elementine bir tıklama olayı dinleyicisi ekledik. Olay dinleyicisi, `event.target` özelliği ile `button` öğesine (yani tıklama olayının gerçekleştiği hedef öğe) erişirken, `event.currentTarget` özelliği ile `div` öğesine erişir (yani olay dinleyicisinin bağlandığı öğe). Aynı şekilde, `inner` adlı `button` elementine bir tıklama olayı dinleyicisi ekledik. Olay dinleyicisi, `event.target` özelliği ile yine `button` öğesine (yani tıklama olayının gerçekleştiği hedef öğe) erişirken, `event.currentTarget` özelliği ile bu kez `button` öğesine erişir (yani olay dinleyicisinin bağlandığı öğe). Bu örnekte, `target` ve `currentTarget` özellikleri farklı sonuçlar verir çünkü tıklama olayının hedefi olan `button` öğesi, farklı bir öğeye (`div` öğesi) bağlı olan olay dinleyicisine ve aynı öğeye (`button` öğesi) bağlı olan olay dinleyicisine sahiptir. Bu nedenle, `currentTarget` özelliği, her olay dinleyicisi için farklı bir öğeyi temsil ederken, `target` özelliği her iki olay dinleyicisi için de aynı öğeyi temsil eder.
+*/
