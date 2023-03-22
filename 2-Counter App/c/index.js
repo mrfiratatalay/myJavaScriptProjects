@@ -1,23 +1,60 @@
 window.onload = function () {
-  // incrementButton, decrementButton ve numberOfPassengers seçicilerini tanımlayalım.
-  let incrementButton = document.querySelector("#increment-btn");
-  let numberOfPassengers = document.querySelector(".count-el");
-  let count = 0; // count adında bir değişken tanımlayalım ve başlangıçta değerini sıfır olarak atayalım.
-  let decrementButton = document.querySelector("#decrement-btn");
-  let decrement = 1; // decrement adında bir değişken tanımlayalım ve başlangıçta değerini bir olarak atayalım.
+  // Bu satırda HTML'den sayacı gösteren etiketi (tag) seçiyoruz.
+  const countertext = document.getElementById("countertext");
 
-  // Arttırma butonuna tıklanıldığında yapılacak işlemleri tanımlayalım.
-  incrementButton.addEventListener("click", (e) => {
-    count = count + 1; // count değişkenini 1 arttıralım.
-    numberOfPassengers.innerHTML = count; // numberOfPassengers içindeki metni count değişkeninin değeri ile güncelleyelim.
+  // Bu satırda HTML'den tüm butonları seçiyoruz.
+  const btns = document.querySelectorAll("button");
+
+  // Bu satırlarda sayacın başlangıç değerini belirliyoruz. İlk satırda 0 değerini atıyoruz, ikinci satırda ise aynı değeri sayıya çeviriyoruz.
+  let countInitial = 0;
+  let count = Number(countInitial);
+
+  // Bu satırlarda butonlara tıklanınca ne olacağını belirtiyoruz.
+  // btns[0] satırı, "Decrease" butonuna tıklandığında gerçekleştirilecek işlemleri belirtiyor.
+  btns[0].addEventListener("click", function () {
+    // count değişkenini bir azaltıyoruz.
+    count--;
+
+    // countertext etiketinin içeriğini değiştiriyoruz, böylece sayacı güncelliyoruz.
+    countertext.innerHTML = count;
+
+    // Eğer sayacın değeri 0'dan küçükse, yazı rengini kırmızı yapıyoruz.
+    if (count < 0) {
+      countertext.style.color = "red";
+    }
+    // Eğer sayacın değeri 0'dan büyükse, yazı rengini yeşil yapıyoruz.
+    else if (count > 0) {
+      countertext.style.color = "green";
+    }
+    // Eğer sayacın değeri 0 ise, yazı rengini siyah yapıyoruz.
+    else if (count == 0) {
+      countertext.style.color = "black";
+    }
+    // Eğer sayacın değeri başka bir sayı değeri ise, yazı rengini siyah yapıyoruz.
+    else {
+      countertext.style.color = "black";
+    }
   });
 
-  // Azaltma butonuna tıklanıldığında yapılacak işlemleri tanımlayalım.
-  decrementButton.addEventListener("click", (e) => {
-    if (count >= 0) {
-      // Eğer count değişkeni sıfırdan büyük veya eşitse:
-      decrement = count--; // decrement değişkenine count değişkeninin değerini atayıp count değişkenini 1 azaltalım.
-      numberOfPassengers.innerHTML = decrement; // numberOfPassengers içindeki metni decrement değişkeninin değeri ile güncelleyelim.
+  // Ayni islemleri diger butonlarda yapiyorum...
+
+  btns[1].addEventListener("click", function () {
+    countertext.innerHTML = 0;
+    count = 0;
+    countertext.style.color = "black";
+  });
+  btns[2].addEventListener("click", function () {
+    count++;
+    countertext.innerHTML = count;
+
+    if (count < 0) {
+      countertext.style.color = "red";
+    } else if (count > 0) {
+      countertext.style.color = "green";
+    } else if (count == 0) {
+      countertext.style.color = "black";
+    } else {
+      countertext.style.color = "black";
     }
   });
 };
