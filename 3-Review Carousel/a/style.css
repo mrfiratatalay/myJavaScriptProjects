@@ -1,0 +1,41 @@
+body {
+  background-color: bisque;
+}
+.container {
+  width: 500px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+}
+
+.review {
+  width: 400px;
+  height: 300px;
+  padding: 20px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  text-align: left;
+  margin: 0 20px;
+  display: none;
+}
+
+.review.active {
+  display: block;
+}
+
+#prev-btn,
+#next-btn {
+  width: 100px;
+  height: 50px;
+  font-size: 18px;
+  margin: 20px;
+}
+
+#prev-btn:hover,
+#next-btn:hover {
+  cursor: pointer;
+}
