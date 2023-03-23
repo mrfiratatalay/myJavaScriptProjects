@@ -1,0 +1,134 @@
+*,
+::before,
+::after {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+main {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: rgba(252, 211, 3, 0.4);
+}
+
+.container {
+  width: 80vw;
+  padding: 0.5rem;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 25px;
+}
+
+.underline {
+  width: 3rem;
+  height: 0.25rem;
+  background-color: rgba(235, 0, 0);
+  margin: 0 auto;
+}
+
+.review {
+  background-color: #fffade;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.image {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+  border-radius: 50%;
+}
+
+.image::before {
+  content: "";
+  border-radius: 50%;
+  background: red;
+  top: -0.25rem;
+  right: -0.5rem;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.image::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f10e";
+  width: 2.5rem;
+  height: 2.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  color: white;
+  background: rgba(235, 0, 0);
+  display: grid;
+  place-items: center;
+}
+
+#person-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+}
+
+#author {
+  margin-bottom: 0.25rem;
+  text-transform: capitalize;
+}
+
+#job {
+  color: rgba(194, 0, 0, 0.7);
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+#text {
+  color: rgba(51, 0, 0, 0.7);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-left,
+.btn-right {
+  border-color: transparent;
+  background-color: transparent;
+  font-size: 1.2rem;
+  margin: 0 0.5rem;
+  color: rgba(255, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.btn-left:hover,
+.btn-right:hover {
+  color: red;
+}
+
+.btn-random {
+  margin-top: 0.5rem;
+  border: 2px solid rgba(255, 0, 0, 0.5);
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+  background-color: rgba(255, 0, 0, 0.2);
+  font-size: 0.8rem;
+  color: rgba(50, 0, 0, 0.7);
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.btn-random:hover {
+  color: rgba(51, 0, 0);
+  border: 2px solid red;
+}
