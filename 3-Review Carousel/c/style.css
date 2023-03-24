@@ -1,0 +1,125 @@
+/* Global değişkenler (font büyüklükleri ve renkler) */
+:root {
+  --h1-fs: 3rem; /* h1 font büyüklüğü */
+  --h2-fs: 2rem; /* h2 font büyüklüğü */
+  --h3-fs: 1.5rem; /* h3 font büyüklüğü */
+  --h4-fs: 1.2rem; /* h4 font büyüklüğü */
+  --para1-fs: 1rem; /* normal paragraf font büyüklüğü */
+  --subtxt-fs: 0.8rem; /* alt metin font büyüklüğü */
+  --primary-clr: red; /* birincil renk */
+  --secondary-clr: black; /* ikincil renk */
+  --accent-clr: white; /* vurgu renk */
+}
+
+/* Tüm elementlerin margin, padding ve kutu modeli kutu sınırlarının hesaplamasını sıfırla */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Century Gothic; /* varsayılan font */
+}
+
+/* Sayfa genel ayarları */
+body {
+  width: 100vw; /* sayfa genişliği */
+}
+
+/* Slide container */
+.slide {
+  width: 40em; /* container genişliği */
+  height: 25em; /* container yüksekliği */
+  margin: 0 auto; /* container ortalama */
+  border-radius: 0.5em; /* container köşeleri */
+  padding: 2em 2.5em; /* container padding'i */
+
+  /* grid yapısı */
+  display: grid;
+  align-content: center;
+  gap: 1em;
+}
+
+/* Container'a gölge ekle */
+.shadow {
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+}
+
+/* Başlık (title) */
+.title {
+  font-size: var(--h1-fs); /* font büyüklüğü (root'tan alır) */
+  width: max-content; /* minimum genişlik */
+  margin: 1.5em auto; /* container içinde margin */
+}
+
+/* Yorum (bio) */
+.bio {
+  font-style: italic; /* italik font */
+  line-height: 1.5em; /* satır yüksekliği */
+  transition: all 550ms ease-in; /* geçiş efekti */
+}
+
+/* İsim (name) */
+.name {
+  font-weight: 600; /* bold font */
+  color: #333; /* siyah renk */
+}
+
+/* Meslek (profession) */
+.profession {
+  color: #888; /* gri renk */
+  font-size: var(--subtxt-fs); /* font büyüklüğü (root'tan alır) */
+  text-transform: uppercase; /* büyük harf dönüştürme */
+  margin-top: 0.2em; /* container içinde margin */
+}
+
+/* Sayfalama (pagination) */
+
+/* Sayfa numaralarını ve okları ortalamak için flex kullanıyoruz */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+/* Sayfa oklarının stilleri */
+.arrows {
+  border: 1px solid #dcdcdc;
+  padding: 0.3em 0.7em;
+  color: #dcdcdc;
+  cursor: pointer;
+
+  transition: background-color, border, color 550ms ease-in;
+}
+
+/* Butonların stilleri */
+button {
+  height: 3em;
+  width: 9em;
+  border: 1px solid #f27242;
+  background-color: transparent;
+  border-radius: 0.3em;
+  color: #f27242;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+  transition: background-color, border, color 350ms ease-in;
+}
+
+/* Butonların üzerine gelindiğindeki stilleri */
+button:hover {
+  background-color: #f27242;
+  border: 1px solid transparent;
+  color: #fff;
+}
+
+/* Sayfa oklarının üzerine gelindiğindeki stilleri */
+.arrows:hover {
+  background-color: #f27242;
+  border: 1px solid transparent;
+  color: #fff;
+}
