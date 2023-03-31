@@ -13,29 +13,34 @@
     <script src="index.js"></script>
   </head>
   <body>
-    <nav class="navbar">
-      <a href="https://github.com/mrfiratatalay" class="href">GitHub</a>
-      <!-- "navbar" class'ına sahip bir navigasyon çubuğu oluşturuluyor ve "GitHub"
-      linki ekleniyor. -->
-      <h1 class="site-title">Color Flipper</h1>
-      <!-- Sayfanın başlık kısmına "Color Flipper" metni ekleniyor. -->
-    </nav>
-
-    <main class="container">
-      <div class="container-form">
-        <div class="square" id="circle"></div>
-        <!-- "container-form" class'ına sahip bir kutu oluşturuluyor ve içinde
-        "square" class'ına sahip bir kare, "circle" id'li bir element bulunuyor. -->
-        <h2 class="title-text">Your color is...</h2>
-        <!-- "container-form" class'ına sahip kutunun altında "Your color is..."
-        başlığı ekleniyor. -->
-        <span id="color-text" class="color-text">#cccc</span>
-        <!-- "color-text" id'li bir element ekleniyor ve "#cccc" metni içeriyor. -->
+    <header>
+      <div class="left">
+        <h1>FIRAT ATALAY</h1>
       </div>
-      <button id="random-generator" class="random-generator">
-        Click here!
-      </button>
-      <!-- "random-generator" id'li bir buton oluşturuluyor ve "Click here!" metni ekleniyor. -->
+
+      <div class="right">
+        <h2>Generate Random Colors</h2>
+        <button class="button" id="btn">Generate</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="numOne">
+        <h2 id="numOne">Hex: <span id="one">#FFFFFF</span></h2>
+      </div>
+      <div class="numTwo">
+        <h2 id="numTwo">Hex: <span id="two">#FFFFFF</span></h2>
+      </div>
+      <div class="numThree">
+        <h2 id="numThree">Hex: <span id="three">#FFFFFF</span></h2>
+      </div>
+      <div class="numFour">
+        <h2 id="numFour">Hex: <span id="four">#FFFFFF</span></h2>
+      </div>
     </main>
+
+    <footer>
+      <span>mrfiratatalay</span>
+    </footer>
   </body>
 </html>

@@ -1,27 +1,55 @@
 window.onload = function () {
-  const HEX = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"]; // "HEX" adında bir sabit tanımlanıyor ve içine 0-9 arası sayılar ve A-F harfleri ekleniyor. Bu dizi, rastgele HEX renk kodları oluşturmak için kullanılacak.
+  const hex = [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+  ];
 
-  const button = document.getElementById("random-generator"); // HTML'deki "random-generator" id'sine sahip buton, "button" değişkenine atandı.
+  const btn = document.getElementById("btn");
+  const one = document.querySelector(".numOne");
+  const two = document.querySelector(".numTwo");
+  const three = document.querySelector(".numThree");
+  const four = document.querySelector(".numFour");
+  const numOne = document.getElementById("one");
+  const numTwo = document.getElementById("two");
+  const numThree = document.getElementById("three");
+  const numFour = document.getElementById("four");
 
-  const colorText = document.getElementById("color-text"); // HTML'deki "color-text" id'sine sahip bir element, "colorText" değişkenine atandı.
-
-  let background = document.getElementById("circle"); // HTML'deki "circle" id'sine sahip bir element, "background" değişkenine atandı.
-
-  function getRandomNumber() {
-    return Math.floor(Math.random() * HEX.length); // HEX dizisi içindeki elemanların sayısı ile çarpılan rastgele bir sayı döndüren bir fonksiyon tanımlanıyor.
-  }
-  // "click" olayı gerçekleştiğinde çalışacak bir olay dinleyicisi eklendi.
-
-  button.addEventListener("click", () => {
-    let hexColor = "#"; // hex renk kodunun başına "#" işareti eklendi.
-
-    // 6 karakterli bir hex renk kodu oluşturmak için, HEX dizisinden rastgele 6 eleman seçilip hexColor değişkenine ekleniyor.
+  function randHexColor() {
+    let hexColor = "#";
     for (let i = 0; i < 6; i++) {
-      hexColor += HEX[getRandomNumber()];
+      hexColor += hex[Math.floor(Math.random() * hex.length)];
     }
+    return hexColor;
+  }
 
-    colorText.textContent = hexColor; // HTML'deki "color-text" elementinin metni, oluşturulan hex renk kodu ile değiştiriliyor.
-    colorText.style.color = hexColor; // "color-text" elementinin yazı rengi, oluşturulan hex renk kodu ile değiştiriliyor.
-    background.style.backgroundColor = hexColor; // "circle" elementinin arka plan rengi, oluşturulan hex renk kodu ile değiştiriliyor.
-  });
+  const hexDisplay = () => {
+    let hexOne = randHexColor();
+    let hexTwo = randHexColor();
+    let hexThree = randHexColor();
+    let hexFour = randHexColor();
+    one.style.backgroundColor = hexOne;
+    two.style.backgroundColor = hexTwo;
+    three.style.backgroundColor = hexThree;
+    four.style.backgroundColor = hexFour;
+    numOne.textContent = hexOne;
+    numTwo.textContent = hexTwo;
+    numThree.textContent = hexThree;
+    numFour.textContent = hexFour;
+  };
+
+  btn.addEventListener("click", hexDisplay);
 };
