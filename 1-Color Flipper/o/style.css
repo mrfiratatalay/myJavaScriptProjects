@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;700&display=swap");
+
+/* Google Fonts'tan Roboto Mono yazı tipini çağırmak için bir stil yönergesi kullanılıyor */
+
+:root {
+  --light: #fffcf2;
+  --mid-light: #ccc5b9;
+  --mid: #403d39;
+  --dark: #252422;
+}
+
+/* CSS değişkenleri tanımlanıyor ve bunlar herhangi bir stil yönergesinde kullanılabilecek önceden tanımlanmış renk kodlarına eşleniyor */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+}
+
+/* Tüm HTML elementleri için varsayılan ayarlar belirtiliyor: Kenar boşluğu, iç boşluk, kutu boyutlandırma, ve yazı tipi ayarları tanımlanıyor */
+
+body {
+  background-color: var(--light);
+  color: var(--dark);
+
+  margin: 3em;
+  height: 100%;
+}
+
+/* HTML <body> elementinin stil özellikleri belirleniyor: Arkaplan rengi, yazı rengi, kenar boşluğu, ve yükseklik özellikleri tanımlanıyor */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Navbar stil özellikleri belirleniyor: Navbar HTML elementi için Flexbox düzeni (öğeleri yatay olarak hizalama) tanımlanıyor, öğeler arasında boşluk bırakmak için "justify-content: space-between" kullanılıyor, ve öğeleri dikey olarak hizalamak için "align-items: center" kullanılıyor */
+
+.navbar a {
+  text-decoration: none;
+  color: var(--dark);
+  font-size: 1.5em;
+}
+
+/* Navbar'daki linklerin stil özellikleri belirleniyor: Alt çizgi olmaması için "text-decoration: none" kullanılıyor, yazı rengi belirleniyor, ve yazı boyutu belirleniyor */
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* HTML <main> elementinin stil özellikleri belirleniyor: Flexbox düzeni (öğeleri dikey olarak hizalama) kullanılıyor, öğeleri yatay ve dikey olarak hizalamak için "align-items: center" ve "justify-content: center" kullanılıyor */
+
+.container-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .container-form sınıfı bir flex konteynerdir ve içindeki öğeleri dikey olarak hizalar. */
+
+.color-text {
+  font-size: 2em;
+}
+
+/* .color-text sınıfı 2em boyutunda bir yazı tipi kullanır. */
+
+.square {
+  width: 20em;
+  height: 20em;
+  background-color: #ccc;
+  border-radius: 999px;
+  margin: 5em;
+}
+
+/* .square sınıfı, 20em genişliğinde ve 20em yüksekliğinde bir kare oluşturur. Kare arka plan rengi #ccc ve kenar yarıçapı 999px'dir. Kare, 5em boşluk ile diğer öğelerden ayrılır. */
+
+.random-generator {
+  margin: 1.5em;
+  padding: 0.5em;
+  font-size: 2em;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--dark);
+  color: var(--light);
+  box-shadow: 6px 6px 0px var(--mid-light);
+}
+
+/* .random-generator sınıfı, 20 piksel yarıçaplı ve kenarları olmayan bir kutu oluşturur. Kutunun arka plan rengi var(--dark) ve yazı rengi var(--light) 'dır. Kutu, 1.5em margin ve 0.5em padding değerleri ile diğer öğelerden ayrılır. Kutu, 6px sağ alt köşesinde bir gölgeye sahiptir. */
+
+.random-generator:hover {
+  box-shadow: -6px -6px 0px var(--mid-light);
+  cursor: pointer;
+}
+
+/* .random-generator sınıfına bir hover durumunda uygulanan özellik, kutunun sol üst köşesinde (-6px, -6px) bir gölge etkisi yaratmaktır. */
