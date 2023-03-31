@@ -13,29 +13,26 @@
     <script src="index.js"></script>
   </head>
   <body>
-    <nav class="navbar">
-      <a href="https://github.com/mrfiratatalay" class="href">GitHub</a>
-      <!-- "navbar" class'ına sahip bir navigasyon çubuğu oluşturuluyor ve "GitHub"
-      linki ekleniyor. -->
-      <h1 class="site-title">Color Flipper</h1>
-      <!-- Sayfanın başlık kısmına "Color Flipper" metni ekleniyor. -->
-    </nav>
-
-    <main class="container">
-      <div class="container-form">
-        <div class="square" id="circle"></div>
-        <!-- "container-form" class'ına sahip bir kutu oluşturuluyor ve içinde
-        "square" class'ına sahip bir kare, "circle" id'li bir element bulunuyor. -->
-        <h2 class="title-text">Your color is...</h2>
-        <!-- "container-form" class'ına sahip kutunun altında "Your color is..."
-        başlığı ekleniyor. -->
-        <span id="color-text" class="color-text">#cccc</span>
-        <!-- "color-text" id'li bir element ekleniyor ve "#cccc" metni içeriyor. -->
+    <div id="container">
+      <div class="flex">
+        <div class="clear item colorOne">
+          <span class="clear randomColor"> #FFFFFF</span>
+        </div>
+        <div class="clear item colorTwo">
+          <span class="clear randomColor2"> #FFFFFF</span>
+        </div>
+        <div class="clear item colorThree">
+          <span class="clear randomColor3">#FFFFFF</span>
+        </div>
+        <div class="clear item colorFour">
+          <span class="clear randomColor4">#FFFFFF</span>
+        </div>
       </div>
-      <button id="random-generator" class="random-generator">
-        Click here!
-      </button>
-      <!-- "random-generator" id'li bir buton oluşturuluyor ve "Click here!" metni ekleniyor. -->
-    </main>
+
+      <div id="button">
+        <button class="btn generateBtn">Generate</button>
+        <button class="btn clearBtn">Clear</button>
+      </div>
+    </div>
   </body>
 </html>

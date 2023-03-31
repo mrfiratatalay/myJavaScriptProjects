@@ -1,27 +1,74 @@
 window.onload = function () {
-  const HEX = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"]; // "HEX" adında bir sabit tanımlanıyor ve içine 0-9 arası sayılar ve A-F harfleri ekleniyor. Bu dizi, rastgele HEX renk kodları oluşturmak için kullanılacak.
+  // Web sayfası yüklendiğinde çalışacak fonksiyon tanımlandı.
 
-  const button = document.getElementById("random-generator"); // HTML'deki "random-generator" id'sine sahip buton, "button" değişkenine atandı.
+  const hexletters = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+  ];
+  // Renk kodları için kullanılacak harfler ve sayılar bir dizi içinde tanımlandı.
 
-  const colorText = document.getElementById("color-text"); // HTML'deki "color-text" id'sine sahip bir element, "colorText" değişkenine atandı.
+  const genBtn = document.querySelector(".generateBtn");
+  const clearBtn = document.querySelector(".clearBtn");
+  // generateBtn ve clearBtn sınıflarına sahip butonlar seçildi.
 
-  let background = document.getElementById("circle"); // HTML'deki "circle" id'sine sahip bir element, "background" değişkenine atandı.
+  genBtn.addEventListener("click", function () {
+    // generateBtn butonuna tıklandığında çalışacak fonksiyon tanımlandı.
 
-  function getRandomNumber() {
-    return Math.floor(Math.random() * HEX.length); // HEX dizisi içindeki elemanların sayısı ile çarpılan rastgele bir sayı döndüren bir fonksiyon tanımlanıyor.
-  }
-  // "click" olayı gerçekleştiğinde çalışacak bir olay dinleyicisi eklendi.
+    let color = randomhexcolor();
+    let color2 = randomhexcolor();
+    let color3 = randomhexcolor();
+    let color4 = randomhexcolor();
+    // randomhexcolor fonksiyonu kullanılarak dört adet rastgele renk oluşturuldu.
 
-  button.addEventListener("click", () => {
-    let hexColor = "#"; // hex renk kodunun başına "#" işareti eklendi.
+    document.querySelector(".colorOne").style.backgroundColor = color;
+    document.querySelector(".colorTwo").style.backgroundColor = color2;
+    document.querySelector(".colorThree").style.backgroundColor = color3;
+    document.querySelector(".colorFour").style.backgroundColor = color4;
+    // HTML belgesindeki .colorOne, .colorTwo, .colorThree ve .colorFour sınıflarına sahip elemanların arka plan rengi rastgele oluşturulan renklere ayarlandı.
 
-    // 6 karakterli bir hex renk kodu oluşturmak için, HEX dizisinden rastgele 6 eleman seçilip hexColor değişkenine ekleniyor.
-    for (let i = 0; i < 6; i++) {
-      hexColor += HEX[getRandomNumber()];
+    document.querySelector(".randomColor").style.color = color;
+    document.querySelector(".randomColor2").style.color = color2;
+    document.querySelector(".randomColor3").style.color = color3;
+    document.querySelector(".randomColor4").style.color = color4;
+    // HTML belgesindeki .randomColor, .randomColor2, .randomColor3 ve .randomColor4 sınıflarına sahip elemanların metin rengi rastgele oluşturulan renklere ayarlandı.
+  });
+
+  function randomhexcolor() {
+    // Rastgele hex renk kodu oluşturan fonksiyon tanımlandı.
+
+    let hexColor = "#";
+    // Renk kodunun başına # karakteri eklendi.
+
+    for (let x = 0; x < 6; x++) {
+      hexColor = hexColor + hexletters[Math.floor(Math.random() * 16)];
     }
+    // hexletters dizisindeki harfler ve sayılar kullanılarak altı karakterlik bir rastgele renk kodu oluşturuldu.
 
-    colorText.textContent = hexColor; // HTML'deki "color-text" elementinin metni, oluşturulan hex renk kodu ile değiştiriliyor.
-    colorText.style.color = hexColor; // "color-text" elementinin yazı rengi, oluşturulan hex renk kodu ile değiştiriliyor.
-    background.style.backgroundColor = hexColor; // "circle" elementinin arka plan rengi, oluşturulan hex renk kodu ile değiştiriliyor.
+    return hexColor;
+    // Oluşturulan rastgele renk kodu fonksiyondan döndürüldü.
+  }
+
+  clearBtn.addEventListener("click", () => {
+    // clearBtn butonuna tıklandığında çalışacak fonksiyon tanımlandı.
+
+    document.querySelectorAll(".clear").forEach((cur) => {
+      cur.style.backgroundColor = "lightgrey";
+      cur.style.color = "lightgrey";
+    });
+    // HTML belgesindeki .clear sınıfına sahip tüm elemanların arka planlari sifirlandi.
   });
 };
