@@ -40,6 +40,7 @@ body {
 .btn:hover {
   color: #a17fb0;
   background-color: lightgrey;
+  cursor: pointer;
 }
 
 .randomColor {
