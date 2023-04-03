@@ -39,7 +39,7 @@ window.onload = function () {
   buttonBottom.forEach(function (btn) {
     // Butona tıklanınca çalışacak fonksiyonu tanımlıyoruz
     btn.addEventListener("click", function (e) {
-      // Tıklanan butonun parent elementinin ilk çocuğunun ilk çocuğunu seçiyoruz
+      // Tıklanan butonun parent elementinin ilk çocuğunun ilk çocuğunu seçiyoruz.Yani h1'leeri seciyor.
       let colorboxText = e.target.parentElement.children[0].firstElementChild;
       // Colorbox text content'i, tıklanan butonun parent elementinin son karakterine göre belirleniyor
       if (
