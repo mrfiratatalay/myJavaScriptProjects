@@ -245,3 +245,32 @@ footer {
   text-align: center;
   z-index: 999;
 }
+
+/* ACIL BUTTON */
+.acil {
+  position: absolute;
+  bottom: 100px;
+  border-radius: 20px;
+  border: 1px solid #00c9ff;
+  background-color: #00c9ff;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+.acil:active {
+  transform: scale(0.95);
+}
+
+.acil:focus {
+  outline: none;
+}
+
+.acil.ghost {
+  background-color: transparent;
+  border-color: #ffffff;
+}
